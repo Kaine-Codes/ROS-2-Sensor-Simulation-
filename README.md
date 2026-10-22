@@ -103,6 +103,7 @@ The node refuses to start.
 ### Demo video
 
 Video (no audio): `final_demo.mp4` in the demo folder of the respository	
+![Demo Video](demo/final_demo.mp4)
 
 
 ## Tests
@@ -114,4 +115,4 @@ cd ~/ros2_ws
 colcon test --packages-select sim_sensor
 colcon test-result --verbose
 ```
-![Project Screenshot](demo/screenshot_Assessment.png)
+![Screenshot](demo/screenshot_Assessment.png)
