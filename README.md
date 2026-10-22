@@ -114,5 +114,4 @@ cd ~/ros2_ws
 colcon test --packages-select sim_sensor
 colcon test-result --verbose
 ```
-
-![Uploading Screenshot from 2026-10-22 14-49-32.png…]()
+![Project Screenshot](screenshot_Assessment.png)
