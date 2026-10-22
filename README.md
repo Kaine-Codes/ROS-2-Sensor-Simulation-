@@ -114,4 +114,4 @@ cd ~/ros2_ws
 colcon test --packages-select sim_sensor
 colcon test-result --verbose
 ```
-![Project Screenshot](screenshot_Assessment.png)
+![Project Screenshot](demo/screenshot_Assessment.png)
