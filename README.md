@@ -51,7 +51,7 @@ ros2 launch sim_sensor sensor.launch.py rate_hz:=20.0 autostart:=false
 
 ## Demo
 
-The demo video is uploaded in the github repooo, in it i used three terminals, one for seeing the live data coming in, one for giving in commands and one for shows the runtime update from the node
+The demo video is uploaded in the github repo, in it i used three terminals, one for seeing the live data coming in, one for giving in commands and one for shows the runtime update from the node
 
 | Terminal | Purpose |
 |---|---|
@@ -90,8 +90,8 @@ ros2 param set /sim_sensor rate_hz 25.0
 ros2 param set /sim_sensor rate_hz -5.0
 ros2 param set /sim_sensor rate_hz 0.0
 ros2 param set /sim_sensor rate_hz 500.0
-#   Setting parameter failed: rate_hz=... outside allowed range [0.1, 100.0]
-ros2 param get /sim_sensor rate_hz        # still 25.0
+Setting parameter failed: rate_hz=-5.0 outside allowed range [0.1, 100.0]
+ros2 param get /sim_sensor rate_hz        #gives back the current rate
 ```
 
 **Invalid rate at startup** (stop terminal 1 first, then run):
@@ -102,7 +102,7 @@ The node refuses to start.
 
 ### Demo video
 
-Video (no audio): `final_demo.mp4` 
+Video (no audio): `final_demo.mp4` in the demo folder of the respository	
 
 
 ## Tests
