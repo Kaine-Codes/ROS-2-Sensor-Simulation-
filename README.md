@@ -51,7 +51,9 @@ ros2 launch sim_sensor sensor.launch.py rate_hz:=20.0 autostart:=false
 
 ## Demo
 
-The demo video is uploaded in the github repo, in it i used three terminals, one for seeing the live data coming in, one for giving in commands and one for shows the runtime update from the node
+In the demo video i used three terminals, one for seeing the live data coming in, one for giving in commands and one for shows the runtime update from the node
+the demo video is named 'final_demo.mp4' and its in the demo folder in the repository.
+<video src="demo/final_demo.mp4" width="100%" controls></video>
 
 | Terminal | Purpose |
 |---|---|
@@ -99,13 +101,6 @@ ros2 param get /sim_sensor rate_hz        #gives back the current rate
 ros2 launch sim_sensor sensor.launch.py rate_hz:=-1.0
 ```
 The node refuses to start.
-
-### Demo video
-
-Video (no audio): `final_demo.mp4` in the demo folder of the respository.
-
-![Video](demo/final_demo.mp4)
-
 
 ## Tests
 
