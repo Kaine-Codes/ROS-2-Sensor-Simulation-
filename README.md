@@ -53,7 +53,12 @@ ros2 launch sim_sensor sensor.launch.py rate_hz:=20.0 autostart:=false
 
 In the demo video i used three terminals, one for seeing the live data coming in, one for giving in commands and one for shows the runtime update from the node
 the demo video is named 'final_demo.mp4' and its in the demo folder in the repository.
-<video src="demo/final_demo.mp4" width="100%" controls></video>
+
+
+
+https://github.com/user-attachments/assets/21a2ba64-0f74-4bdf-b350-192d692b36c2
+
+
 
 | Terminal | Purpose |
 |---|---|
