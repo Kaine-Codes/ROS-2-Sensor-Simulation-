@@ -102,8 +102,9 @@ The node refuses to start.
 
 ### Demo video
 
-Video (no audio): `final_demo.mp4` in the demo folder of the respository	
-![Demo Video](demo/final_demo.mp4)
+Video (no audio): `final_demo.mp4` in the demo folder of the respository.
+
+![Video](demo/final_demo.mp4)
 
 
 ## Tests
