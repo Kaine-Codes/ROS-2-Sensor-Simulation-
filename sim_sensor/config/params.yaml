@@ -1,0 +1,7 @@
+sim_sensor:
+  ros__parameters:
+    rate_hz: 10.0
+    frame_id: pressure_sensor_link
+    max_depth_m: 20.0
+    noise_std_pa: 50.0
+    autostart: true
