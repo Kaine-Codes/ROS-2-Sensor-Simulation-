@@ -27,6 +27,9 @@ Defaults are set in `config/params.yaml`.
 - **Validation** lives in a parameter callback that checks type, finiteness and range, and returns a reason string when it rejects a value. The callback is registered *before* the parameters are declared, so a bad value from the launch file or YAML makes the node fail at startup instead of running with a wrong rate.
 - **Pressure model:** `P = 101325 + 1025 * 9.80665 * depth` (Pa), using sea-level atmospheric pressure and seawater density.
 
+## Cloning this Repo and Running it Yourself
+
+
 ## Build
 
 Prerequisites: Ubuntu 22.04 with ROS 2 Iron installed and `colcon` available.
@@ -34,7 +37,7 @@ Prerequisites: Ubuntu 22.04 with ROS 2 Iron installed and `colcon` available.
 ```bash
 source /opt/ros/iron/setup.bash
 mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
-git clone <this-repo-url>
+git clone https://github.com/Kaine-Codes/ROS-2-Sensor-Simulation-.git
 cd ~/ros2_ws
 colcon build --packages-select sim_sensor
 source install/setup.bash
