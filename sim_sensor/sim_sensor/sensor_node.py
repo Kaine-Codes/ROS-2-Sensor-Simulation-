@@ -8,8 +8,7 @@ import math
 import random
 
 import rclpy
-from rcl_interfaces.msg import (FloatingPointRange, ParameterDescriptor,
-                                SetParametersResult)
+from rcl_interfaces.msg import ParameterDescriptor, SetParametersResult
 from rclpy.node import Node
 from sensor_msgs.msg import FluidPressure
 from std_srvs.srv import SetBool
@@ -48,9 +47,7 @@ class SimSensor(Node):
         self.declare_parameter(
             'rate_hz', 10.0,
             ParameterDescriptor(
-                description='Publish rate in Hz.',
-                floating_point_range=[FloatingPointRange(
-                    from_value=MIN_RATE_HZ, to_value=MAX_RATE_HZ, step=0.0)]))
+                description=f'Publish rate in Hz ({MIN_RATE_HZ} to {MAX_RATE_HZ}).'))
         self.declare_parameter('frame_id', 'pressure_sensor_link')
         self.declare_parameter('max_depth_m', 20.0)
         self.declare_parameter('noise_std_pa', 50.0)

@@ -40,7 +40,7 @@ colcon build --packages-select sim_sensor
 source install/setup.bash
 ```
 
-Every new terminal needs both `source /opt/ros/iron/setup.bash` and `source ~/ros2_ws/install/setup.bash` before any `ros2` command (or add them to `~/.bashrc`).
+Every new terminal needs both `source /opt/ros/iron/setup.bash` and `source ~/ros2_ws/install/setup.bash` before any `ros2` command (or add them to `~/.bashrc`).so i put them in a bash file.
 
 ## Run
 
@@ -51,7 +51,7 @@ ros2 launch sim_sensor sensor.launch.py rate_hz:=20.0 autostart:=false
 
 ## Demo
 
-The demo uses three terminals, each with both `source` lines already run.
+The demo video is uploaded in the github repo, in it i used three terminals, one for seeing the live data coming in, one for giving in commands and one for shows the runtime update from the node
 
 | Terminal | Purpose |
 |---|---|
@@ -66,13 +66,13 @@ ros2 launch sim_sensor sensor.launch.py
 
 **Terminal 2: live data** (use `ros2 topic echo /sim_sensor/pressure` without `--field` to see the full message)
 ```bash
-ros2 topic echo /sim_sensor/pressure --field fluid_pressure
+ros2 topic echo /sim_sensor/pressure 
 ```
 
 **Terminal 3: commands**
-```bash
+```bash   
 # Measure the publish rate (about 10 Hz)
-ros2 topic hz /sim_sensor/pressure
+ros2 topic hz /sim_sensor/pressure  
 
 # Stop: the output in terminal 2 goes silent
 ros2 service call /sim_sensor/enable std_srvs/srv/SetBool "{data: false}"
@@ -89,9 +89,9 @@ ros2 param set /sim_sensor rate_hz 25.0
 # Invalid rates are rejected and the old rate is kept
 ros2 param set /sim_sensor rate_hz -5.0
 ros2 param set /sim_sensor rate_hz 0.0
-ros2 param set /sim_sensor rate_hz 1000.0
-#   Setting parameter failed: rate_hz=... outside allowed range [0.1, 100.0]
-ros2 param get /sim_sensor rate_hz        # still 25.0
+ros2 param set /sim_sensor rate_hz 500.0
+Setting parameter failed: rate_hz=-5.0 outside allowed range [0.1, 100.0]
+ros2 param get /sim_sensor rate_hz        #gives back the current rate
 ```
 
 **Invalid rate at startup** (stop terminal 1 first, then run):
@@ -102,17 +102,8 @@ The node refuses to start.
 
 ### Demo video
 
-Video (no audio): `demo/demo.mp4` <!-- or replace with a link -->
+Video (no audio): `final_demo.mp4` in the demo folder of the respository	
 
-| Time | What happens |
-|---|---|
-| 0:00 | Node starts at 10 Hz, data scrolls in terminal 2 |
-| 0:00 | *(fill in)* Stop service called, output goes silent |
-| 0:00 | *(fill in)* Start service called, output resumes |
-| 0:00 | *(fill in)* Rate set to 25.0 Hz, output speeds up |
-| 0:00 | *(fill in)* Invalid rates rejected, `rate_hz` stays 25.0 |
-
-Screenshots are in `demo/screenshots/`.
 
 ## Tests
 
@@ -123,10 +114,5 @@ cd ~/ros2_ws
 colcon test --packages-select sim_sensor
 colcon test-result --verbose
 ```
+![Project Screenshot](demo/screenshot_Assessment.png)
 
-## Possible extensions
-
-- A `~/set_rate` service with a typed response.
-- Publish `sensor_msgs/Temperature` alongside pressure, plus a depth topic.
-- A lifecycle node instead of a `SetBool` gate.
-- A C++ (`rclcpp`) port with identical interfaces.
